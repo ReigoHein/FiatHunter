@@ -1,0 +1,22 @@
+<h1>Predict me</h1>
+<%= form_with scope: :exchange, url: market_details_path, local: true do |form| %>
+	<p>
+		<%= form.label :base %><br>
+		<%= form.text_field :base %>
+	</p>
+	<p>
+		<%= form.label :target %><br>
+		<%= form.text_field :target %>
+	</p>
+	<p>
+		<%= form.label :amount %><br>
+		<%= form.text_field :amount %>
+	</p>
+	<p>
+		<%= form.label :weeks %><br>
+		<%= form.text_field :weeks %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>

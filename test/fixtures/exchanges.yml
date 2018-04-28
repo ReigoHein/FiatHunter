@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  base: MyString
+  target: MyString
+  amount: 1
+  weeks: 1
+
+two:
+  base: MyString
+  target: MyString
+  amount: 1
+  weeks: 1
