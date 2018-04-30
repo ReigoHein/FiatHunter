@@ -2,33 +2,34 @@
   <% if @exchange.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@exchange.errors.count, "error") %> prohibited
-        this exchange from being saved:
+        <%= pluralize(@exchange.errors.count, "error") %> prohibited this exchange from being saved:
       </h2>
       <ul>
         <% @exchange.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <li>
+            <%= msg %>
+          </li>
         <% end %>
       </ul>
     </div>
   <% end %>
+  <div class="form-group">
+    <%= form.label :base %>
+    <%= form.collection_select :base, @base_currencies, :to_s, :to_s, {}, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :base %>
+    <%= form.collection_select :target, @target_currencies, :to_s, :to_s, {}, {:class => "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :weeks %>
+    <%= form.range_field :weeks, :min=>1, :max=>25, :class => "form-control-range" %>
+  </div>
   <p>
-    <%= form.label :base %><br>
-    <%= form.text_field :base %>
-  </p>
-  <p>
-    <%= form.label :target %><br>
-    <%= form.text_field :target %>
-  </p>
-  <p>
-    <%= form.label :amount %><br>
-    <%= form.text_field :amount %>
-  </p>
-  <p>
-    <%= form.label :weeks %><br>
-    <%= form.text_field :weeks %>
-  </p>
-  <p>
-    <%= form.submit %>
+    <%= form.submit :class => "btn btn-primary" %>
   </p>
 <% end %>

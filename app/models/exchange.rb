@@ -15,4 +15,13 @@ class Exchange < ApplicationRecord
                       greater_than_or_equal_to: 1,
                       less_than_or_equal_to: 25
                     }
+
+  private
+  def is_valid_base_currency
+
+  end
+
+  def is_valid_target_currency
+
+  end
 end

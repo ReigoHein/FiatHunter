@@ -1,15 +1,8 @@
-<p>
-  <%= @exchange.base %>
-</p>
-<p>
-  <%= @exchange.target %>
-</p>
-<p>
-  <%= @exchange.amount %>
-</p>
-<p>
-  <%= @exchange.weeks %>
-</p>
+<div class="px-4 py-4 mx-auto text-center">
+  <h1><%= @exchange.amount %> <%= @exchange.base %> to <%= @exchange.target %></h1>
+</div>
+
+<%= line_chart @calculated_graph %>
 
 <%= link_to 'Edit', edit_exchange_path(@exchange) %>
 <%= link_to 'Back', exchanges_path %>

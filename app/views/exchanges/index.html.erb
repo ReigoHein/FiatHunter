@@ -1,39 +1,46 @@
-<h1>Your exchanges</h1>
+<div class="px-4 py-4 mx-auto text-center">
+  <h1>Your exchanges</h1>
+</div>
 
-<%= link_to 'New article', new_exchange_path %>
+<div class="container"></div>
 
-<table>
-  <tr>
-    <th>Base</th>
-    <th>Target</th>
-    <th>Amount</th>
-    <th>Weeks</th>
-  </tr>
 
-  <% @exchanges.each do |exchange| %>
+<table class="table">
+  <thead>
     <tr>
-      <td>
-        <%= exchange.base %>
-      </td>
-      <td>
-        <%= exchange.target %>
-      </td>
-      <td>
-        <%= exchange.amount %>
-      </td>
-      <td>
-        <%= exchange.weeks %>
-      </td>
-      <td>
-        <%= link_to 'Details', exchange_path(exchange) %>
-      </td>
-      <td>
-        <%= link_to 'Edit', edit_exchange_path(exchange) %>
-      </td>
-      <td>
-        <%= link_to 'Delete', exchange_path(exchange), 
-            method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
+      <th>Base</th>
+      <th>Target</th>
+      <th>Amount</th>
+      <th>Weeks</th>
+      <th colspan="3"><%= link_to 'New exchange', new_exchange_path %></th>
     </tr>
-    <% end %>
+  </thead>
+  <tbody>
+    <% @exchanges.each do |exchange| %>
+      <tr>
+        <td>
+          <%= exchange.base %>
+        </td>
+        <td>
+          <%= exchange.target %>
+        </td>
+        <td>
+          <%= exchange.amount %>
+        </td>
+        <td>
+          <%= exchange.weeks %>
+        </td>
+        <td>
+          <%= link_to 'Details', exchange_path(exchange) %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_exchange_path(exchange) %>
+        </td>
+        <td>
+          <%= link_to 'Delete', exchange_path(exchange), 
+            method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+      <% end %>
+        <tbody>
 </table>
