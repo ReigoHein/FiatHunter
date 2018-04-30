@@ -1,8 +1,6 @@
-<div>
-
-</div>
-
 <h1>Your exchanges</h1>
+
+<%= link_to 'New article', new_exchange_path %>
 
 <table>
   <tr>
@@ -28,6 +26,13 @@
       </td>
       <td>
         <%= link_to 'Details', exchange_path(exchange) %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_exchange_path(exchange) %>
+      </td>
+      <td>
+        <%= link_to 'Delete', exchange_path(exchange), 
+            method: :delete, data: { confirm: 'Are you sure?' } %>
       </td>
     </tr>
     <% end %>

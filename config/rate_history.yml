@@ -1,0 +1,5 @@
+# config/history.yml
+production:
+  url: ''
+development:
+  url: 'http://localhost:3001'

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :exchange
+  resources :exchanges
 
-  root 'exchange#index'
+  root 'exchanges#index'
 end

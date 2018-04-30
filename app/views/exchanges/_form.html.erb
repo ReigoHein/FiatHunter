@@ -1,4 +1,4 @@
-<%= form_with scope: :exchange, url: exchange_index_path, local: true do |form| %>
+<%= form_with model: @exchange, local: true do |form| %>
   <% if @exchange.errors.any? %>
     <div id="error_explanation">
       <h2>
