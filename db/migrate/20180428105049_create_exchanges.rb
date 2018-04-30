@@ -1,6 +1,7 @@
 class CreateExchanges < ActiveRecord::Migration[5.2]
   def change
     create_table :exchanges do |t|
+      t.integer :user_id, null: false
       t.string :base
       t.string :target
       t.integer :amount
@@ -8,5 +9,10 @@ class CreateExchanges < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    add_foreign_key :exchanges, :users
+
+    add_index :exchanges, :user_id
+
   end
 end

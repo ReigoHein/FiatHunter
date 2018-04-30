@@ -1,0 +1,34 @@
+<%= form_with scope: :exchange, url: exchange_index_path, local: true do |form| %>
+  <% if @exchange.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@exchange.errors.count, "error") %> prohibited
+        this exchange from being saved:
+      </h2>
+      <ul>
+        <% @exchange.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= form.label :base %><br>
+    <%= form.text_field :base %>
+  </p>
+  <p>
+    <%= form.label :target %><br>
+    <%= form.text_field :target %>
+  </p>
+  <p>
+    <%= form.label :amount %><br>
+    <%= form.text_field :amount %>
+  </p>
+  <p>
+    <%= form.label :weeks %><br>
+    <%= form.text_field :weeks %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,34 @@
+<div>
+
+</div>
+
+<h1>Your exchanges</h1>
+
+<table>
+  <tr>
+    <th>Base</th>
+    <th>Target</th>
+    <th>Amount</th>
+    <th>Weeks</th>
+  </tr>
+
+  <% @exchanges.each do |exchange| %>
+    <tr>
+      <td>
+        <%= exchange.base %>
+      </td>
+      <td>
+        <%= exchange.target %>
+      </td>
+      <td>
+        <%= exchange.amount %>
+      </td>
+      <td>
+        <%= exchange.weeks %>
+      </td>
+      <td>
+        <%= link_to 'Details', exchange_path(exchange) %>
+      </td>
+    </tr>
+    <% end %>
+</table>
