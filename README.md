@@ -1,27 +1,32 @@
-# README
+# FiatHunter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails application for getting past currency rate movement and potentially predict future movement.
 
-Things you may want to cover:
-
-# System requirements
+## System requirements
 
 * Ruby 2.5.1
+* Postgresql
+* Rails 5
 
-* System dependencies
+## Dependencies
 
-* Configuration
+To install dependencies, run in a terminal inside project directory:
+	bundle install
 
-* Database creation
+Some gem's might need system dependencies, for example pg needs postgresql installed on the system.
 
-* Database initialization
+## Configuration
 
-* How to run the test suite
+Configure ```config/database.yml``` to use local/remote postgresql server.
 
-* Services (job queues, cache servers, search engines, etc.)
+If the connection should work, run the migrations:
+	rails db:migrate
 
-* Deployment instructions
+If you are running FiatHunter.API locally, be sure to edit the configuration for it, found at ```config/rate_history.yml```.
 
-* ...
+## Running the application
 
+To run the application, run:
+	rails server
+
+If no errors occured, the application should start by default on port 3000.
