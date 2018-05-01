@@ -1,4 +1,4 @@
-<%= form_with model: @exchange, local: true do |form| %>
+<%= form_with model: @exchange, local: true, :html => {:class => "center-form"} do |form| %>
   <% if @exchange.errors.any? %>
     <div id="error_explanation">
       <h2>

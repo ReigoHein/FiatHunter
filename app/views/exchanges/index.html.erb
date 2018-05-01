@@ -12,7 +12,7 @@
       <th>Target</th>
       <th>Amount</th>
       <th>Weeks</th>
-      <th colspan="3"><%= link_to 'New exchange', new_exchange_path %></th>
+      <th colspan="3"><%= link_to 'New exchange', new_exchange_path, :class => "btn btn-primary btn-sm" %></th>
     </tr>
   </thead>
   <tbody>
@@ -31,14 +31,14 @@
           <%= exchange.weeks %>
         </td>
         <td>
-          <%= link_to 'Details', exchange_path(exchange) %>
+          <%= link_to 'Details', exchange_path(exchange), :class => "btn btn-primary btn-sm" %>
         </td>
         <td>
-          <%= link_to 'Edit', edit_exchange_path(exchange) %>
+          <%= link_to 'Edit', edit_exchange_path(exchange), :class => "btn btn-primary btn-sm" %>
         </td>
         <td>
           <%= link_to 'Delete', exchange_path(exchange), 
-            method: :delete, data: { confirm: 'Are you sure?' } %>
+            method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
         </td>
       </tr>
       <% end %>

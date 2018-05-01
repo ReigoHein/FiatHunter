@@ -23,6 +23,8 @@ class ExchangesController < ApplicationController
     if @exchange.save
       redirect_to @exchange
     else
+      @base_currencies = base_currencies
+      @target_currencies = target_currencies
       render 'new'
     end
   end
@@ -33,6 +35,8 @@ class ExchangesController < ApplicationController
     if @exchange.update(exchange_params)
       redirect_to @exchange
     else
+      @base_currencies = base_currencies
+      @target_currencies = target_currencies
       render 'edit'
     end
   end

@@ -18,7 +18,7 @@ class Exchange < ApplicationRecord
 
   private
   def is_valid_base_currency
-
+    
   end
 
   def is_valid_target_currency
