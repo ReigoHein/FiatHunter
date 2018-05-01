@@ -70,8 +70,8 @@ class ExchangesController < ApplicationController
 
   def group_history_chart
     History.get_api_history(@exchange.base, @exchange.target,
-                            @exchange.created_at.strftime('%Y-%V'))
-           .collect { |h| [h['week'], h['rate']] }
+    @exchange.created_at.strftime('%Y-%V'))
+    .collect { |h| [h['week'], h['rate']] }
   end
 
   def predict_rate_movement(history, weeks)
@@ -103,12 +103,12 @@ class ExchangesController < ApplicationController
 
   def target_currencies
     Rails.configuration.rate_history['target_currencies']
-         .split(',')
+    .split(',')
   end
 
   def base_currencies
     Rails.configuration.rate_history['base_currencies']
-         .split(',')
+    .split(',')
   end
 
   def calculate_estimated_amounts(values, amount)

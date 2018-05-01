@@ -1,8 +1,6 @@
 <div class="px-4 py-4 mx-auto text-center">
   <h1><%= @exchange.amount %> <%= @exchange.base %> to <%= @exchange.target %></h1>
 </div>
-
 <%= line_chart @calculated_graph %>
-
 <%= link_to 'Edit', edit_exchange_path(@exchange), :class => "btn btn-primary btn-sm" %>
 <%= link_to 'Back', exchanges_path, :class => "btn btn-primary btn-sm" %>
