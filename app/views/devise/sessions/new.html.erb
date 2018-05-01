@@ -1,7 +1,7 @@
 <div class="px-4 py-4 mx-auto text-center">
   <h1>Log in</h1>
 </div>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { :class => "center-form" }) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">
     <%= f.label :email %>
     <%= f.text_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
